@@ -34,9 +34,10 @@ const Layout = () => {
 
     return (
         <>
+            <link rel='stylesheet' href="Styles.css" />
             <div className="App">
                 <nav
-                    style={{ backgroundColor: "white" }}
+                    style={{display: 'flex', backgroundColor: '#1c3d78'}}
                     className="navbar navbar-expand-lg navbar-light"
                 >
                     <a
@@ -63,28 +64,28 @@ const Layout = () => {
                                 <a
                                     className="navbar-brand"
                                     href="/home"
-                                    style={{ fontSize: "1.45rem" }}
+                                    style={{ fontSize: "1.45rem", color: 'white' }}
                                 >
                                     Home
                                 </a>
                             </li>
                             <li className="nav-item" style={{ marginRight: "8%" }}>
-                                <a className="nav-link" href="/informacion">
+                                <a className="nav-link" href="/info-personal" style={{color: 'white'}}>
                                     Información
                                 </a>
                             </li>
-                            <li className="nav-item" style={{ marginRight: "8%" }}>
-                                <a className="nav-link" href="/tachos">
-                                    Tachos
+                            <li className="nav-item" style={{ marginRight: "8%", minWidth: '30%' }}>
+                                <a className="nav-link" href="/mis-creaciones" style={{color: 'white'}}>
+                                    Mis Creaciones
                                 </a>
                             </li>
                             <li className="nav-item" style={{ marginRight: "8%" }}>
-                                <a className="nav-link" href="/historial">
-                                    Historial
+                                <a className="nav-link" href="/favoritos" style={{color: 'white'}}>
+                                    Favoritos
                                 </a>
                             </li>
                             <li className="nav-item" style={{ marginRight: "8%" }}>
-                                <a className="nav-link" href="/usuario">
+                                <a className="nav-link" href="/perfil" style={{color: 'white'}}>
                                     Perfil
                                 </a>
                             </li>
@@ -107,8 +108,9 @@ const Layout = () => {
                     />
 
                     <Outlet />
+
                 </header>
-                <footer style={{display: 'flex', padding:'3%', backgroundColor: '#1c3d78'}}>
+                <footer style={{display: 'flex', padding:'2%', backgroundColor: '#1c3d78'}}>
 
                 </footer>
             </div>
