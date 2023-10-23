@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { Icon } from "@iconify/react";
 
 const Layout = () => {
     const infoUsuario = window.localStorage
@@ -29,23 +30,20 @@ const Layout = () => {
       idActivo: idActivo || -1
     }
     setHistorial2(newData)
-    localStorage.setItem("Historial", JSON.stringify(newData));
+    localStorage.setItem("Historial", JSON.stringify(newData)); AZUL #1c3d78
     */
 
     return (
         <>
             <link rel='stylesheet' href="Styles.css" />
+            <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
             <div className="App">
                 <nav
-                    style={{display: 'flex', backgroundColor: '#1c3d78'}}
-                    className="navbar navbar-expand-lg navbar-light"
+                    style={{display: 'flex', backgroundColor:'beige', borderBottomStyle: 'solid',
+                    borderBottomColor: 'black',
+                    borderBottomWidth:'0.12rem'}}
+                    className="navbar navbar-expand-lg"
                 >
-                    <a
-                        className="navbar-brand"
-                        href="/"
-                        style={{ maxWidth: "5%", marginLeft: "1rem" }}
-                    >
-                    </a>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -64,28 +62,28 @@ const Layout = () => {
                                 <a
                                     className="navbar-brand"
                                     href="/home"
-                                    style={{ fontSize: "1.45rem", color: 'white' }}
+                                    style={{ fontSize: "1.45rem"}}
                                 >
-                                    Home
+                                    <Icon icon="mingcute:arrow-left-fill" style={{color: 'black'}}></Icon>
                                 </a>
                             </li>
                             <li className="nav-item" style={{ marginRight: "8%" }}>
-                                <a className="nav-link" href="/info-personal" style={{color: 'white'}}>
+                                <a className="nav-link" href="/info-personal" style={{  color: 'black' }}>
                                     Información
                                 </a>
                             </li>
-                            <li className="nav-item" style={{ marginRight: "8%", minWidth: '30%' }}>
-                                <a className="nav-link" href="/mis-creaciones" style={{color: 'white'}}>
+                            <li className="nav-item" style={{ marginRight: "8%", minWidth: '40%' }}>
+                                <a className="nav-link" href="/mis-creaciones" style={{  color: 'black' }}>
                                     Mis Creaciones
                                 </a>
                             </li>
                             <li className="nav-item" style={{ marginRight: "8%" }}>
-                                <a className="nav-link" href="/favoritos" style={{color: 'white'}}>
+                                <a className="nav-link" href="/favoritos" style={{  color: 'black' }}>
                                     Favoritos
                                 </a>
                             </li>
                             <li className="nav-item" style={{ marginRight: "8%" }}>
-                                <a className="nav-link" href="/perfil" style={{color: 'white'}}>
+                                <a className="nav-link" href="/perfil" style={{  color: 'black' }}>
                                     Perfil
                                 </a>
                             </li>
