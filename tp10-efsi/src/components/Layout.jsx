@@ -56,14 +56,14 @@ const Layout = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto">
-                            <li className="nav-item active" style={{ marginRight: "8%" }}>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent" style={{marginTop: "0.1rem", marginBottom: "0.5rem"}}>
+                        <ul className="navbar-nav mr-auto" style={{fontSize: "1rem"}}>
+                            <li className="nav-item active" style={{ marginRight: "8%", marginLeft: "1.2rem" }}>
                                 <a
                                     className="navbar-brand"
                                     href="/home"
                                     style={{ fontSize: "1.45rem"}}
-                                >
+                                    >
                                     <Icon icon="mingcute:arrow-left-fill" style={{color: 'black'}}></Icon>
                                 </a>
                             </li>
