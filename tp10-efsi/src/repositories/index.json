@@ -1,0 +1,10 @@
+{
+  "favoritos": [
+    {
+      "id": 1,
+            "nombre": "Snifterly",
+            "descripcion": "Snifterly es una aplicación mobile con el objetivo de promover el consumo responsable de alcohol. La aplicación trabaja con un sistema organizado por jornadas (un período de tiempo en el cual el usuario va a estar ingiriendo bebidas) donde se podrá medir la cantidad de alcohol que uno tiene en su organismo, utilizando un dispositivo alcoholímetro con bluetooth integrado. La app registrará la medición, la duración de la jornada, y el recorrido de su consumo, permitiendo al usuario observar sus hábitos comprensiblemente.",
+            "imagen": "../img/snifterly.PNG"
+    }
+  ]
+}

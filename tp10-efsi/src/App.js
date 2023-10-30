@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import UsuarioProvider from './context/UsuarioContext';
+import CreationProvider from './context/CreationContext';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './components/Layout';
 import Login from './components/Login';
@@ -14,19 +15,21 @@ import DetalleCreacion from './components/DetalleCreacion';
 function App() {
   return (
     <UsuarioProvider>
-      <BrowserRouter>
-        <Routes>
-        <Route path="/" element={<Login />}></Route>
-          <Route path="/home" element={<Home />}></Route>
-          <Route element={<Layout/>}>
-            <Route path="/info-personal" element={<InfoPersonal />}></Route>
-            <Route path="/mis-creaciones" element={<MisCreaciones />}></Route>
-            <Route path="/detalle-creacion" element={<DetalleCreacion />}></Route>
-            <Route path="/favoritos" element={<Favoritos />}></Route>
-            <Route path="/perfil" element={<Perfil />}></Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <CreationProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Login />}></Route>
+            <Route path="/home" element={<Home />}></Route>
+            <Route element={<Layout />}>
+              <Route path="/info-personal" element={<InfoPersonal />}></Route>
+              <Route path="/mis-creaciones" element={<MisCreaciones />}></Route>
+              <Route path="/detalle-creacion" element={<DetalleCreacion />}></Route>
+              <Route path="/favoritos" element={<Favoritos />}></Route>
+              <Route path="/perfil" element={<Perfil />}></Route>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </CreationProvider>
     </UsuarioProvider>
   );
 }
