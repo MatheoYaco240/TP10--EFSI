@@ -6,28 +6,7 @@ import Proyecto1 from '../img/Proyecto1.jpg'
 const MisCreaciones = () => {
     return (
         <>
-            <Container >
-                <Row style={{display: 'flex', marginTop: '7rem'}}>
-                    <Col style={{display: 'flex', color: 'black', flexDirection: 'column', textAlign: 'initial', alignItems: 'flex-start'}}>
-                        <h1 style={{marginBottom: '5%'}}>Proyecto 1</h1>
-                        <p style={{fontSize: '1.3rem'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie lacus malesuada est commodo, at aliquet leo sodales. Donec ac neque at arcu suscipit ullamcorper. Phasellus venenatis dui vel eros faucibus, vel porttitor eros finibus. Sed bibendum, justo quis sagittis vulputate, augue lorem bibendum dolor, nec congue enim lacus ut quam. </p>
-                        <button style={{fontWeight: 'bold',letterSpacing: '1px',color: '#ddd',position: 'relative',background: 'transparent',padding: '14px 24px',borderRadius: '22px',border: '2',borderColor: '#1c3d78',borderWidth: '2px', fontSize: '1rem', color: 'black'}}>Ver Repositorio</button>
-                    </Col>
-                    <Col>
-                    <img src={Proyecto1} width='80%' alt=''/>
-                    </Col>
-                </Row><br></br><br></br><br></br>
-                
-                <Row>
-                    <Col style={{display: 'flex', color: 'black', flexDirection: 'column', textAlign: 'initial'}}>
-                        <h1 style={{marginBottom: '5%'}}>Proyecto 1</h1>
-                        <p style={{fontSize: '1.3rem'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie lacus malesuada est commodo, at aliquet leo sodales. Donec ac neque at arcu suscipit ullamcorper. Phasellus venenatis dui vel eros faucibus, vel porttitor eros finibus. Sed bibendum, justo quis sagittis vulputate, augue lorem bibendum dolor, nec congue enim lacus ut quam. </p>
-                    </Col>
-                    <Col style={{marginBottom: '7rem'}}>
-                    <img src={Proyecto1} width='80%' alt=''/>
-                    </Col>
-                </Row>
-            </Container>
+           
         </>
     )
 }
