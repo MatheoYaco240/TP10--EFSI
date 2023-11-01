@@ -6,9 +6,12 @@ import { CreationContext } from '../context/CreationContext'
 import { useContext, useState } from 'react';
 import { Icon } from '@iconify/react';
 import { useEffect } from 'react';
+import { getData } from '../Consultas';
 
 const MisCreaciones = () => {
     const { creaciones } = useContext(CreationContext)
+    const [listaFavoritos, setListaFavoritos] = useState(null)
+
     console.log(creaciones)
 
     const [favorito, setFavorito] = useState(false)
@@ -16,6 +19,16 @@ const MisCreaciones = () => {
     const agregarAFavoritos = () => {
         setFavorito(favorito ? false : true)
     }
+
+    const traerListaFavoritos = async () => {
+        const data = await getData()
+        setListaFavoritos(data)
+    }
+
+    useEffect(() => {
+        traerListaFavoritos()
+        console.log(listaFavoritos)
+    },[])
 
     return (
         <>
