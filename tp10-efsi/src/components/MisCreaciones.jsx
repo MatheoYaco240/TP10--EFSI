@@ -6,7 +6,7 @@ import { CreationContext } from '../context/CreationContext'
 import { useContext, useState } from 'react';
 import { Icon } from '@iconify/react';
 import { useEffect } from 'react';
-import { getData } from '../Consultas';
+import { getData, setFavoritos } from '../Consultas';
 
 const MisCreaciones = () => {
     const { creaciones } = useContext(CreationContext)
@@ -16,10 +16,12 @@ const MisCreaciones = () => {
 
     const [favorito, setFavorito] = useState(false)
 
-    const agregarAFavoritos = () => {
+    const agregarAFavoritos = (id) => {
+        const creacion = creaciones.findIndex((creacion) => creacion.id === id)
+        setFavoritos(creacion)
         setFavorito(favorito ? false : true)
     }
-
+    
     const traerListaFavoritos = async () => {
         const data = await getData()
         setListaFavoritos(data)
@@ -40,7 +42,7 @@ const MisCreaciones = () => {
                                 <Col style={{ display: 'flex', color: 'black', flexDirection: 'column', textAlign: 'initial', alignItems: 'flex-start', maxWidth: '65%', marginRight: '2rem' }}>
                                     <div style={{ display: 'flex', alignContent: 'space-around', alignItems: 'baseline' }}>
                                         <h1 style={{ marginBottom: '5%', marginRight: '0.5rem' }}>{creacion.nombre}</h1>
-                                        <button onClick={() => agregarAFavoritos()} style={{ paddingBottom: '0.3rem', backgroundColor: 'transparent', borderColor: 'transparent' }}>
+                                        <button id={creacion.id} onClick={(e) => agregarAFavoritos(e.target.id)} style={{ paddingBottom: '0.3rem', backgroundColor: 'transparent', borderColor: 'transparent' }}> {/*NO SE GUARDA EL ID, VER ESTO*/}
                                             {
                                                 !favorito ? <Icon icon="icon-park-outline:like" style={{paddingBottom: '0.4rem'}}></Icon> : <Icon icon="icon-park-solid:like" style={{ color: "#c41b1b", paddingBottom: '0.4rem' }}></Icon>
                                             }
