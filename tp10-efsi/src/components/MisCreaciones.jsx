@@ -49,7 +49,7 @@ const MisCreaciones = () => {
                                         </button>
                                     </div>
                                     <p style={{ fontSize: '1.3rem' }}>{creacion.descripcion}</p>
-                                    <button style={{ fontWeight: 'bold', letterSpacing: '1px', color: '#ddd', position: 'relative', background: 'transparent', padding: '14px 24px', borderRadius: '22px', border: '2', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black' }}>Ver Repositorio</button>
+                                    <button href= {creacion.repositorio} target="_blank" rel="noopener noreferrer" style={{ fontWeight: 'bold', letterSpacing: '1px', position: 'relative', background: 'beige', padding: '14px 24px', borderRadius: '22px', border: '4', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black', textDecoration: 'none' }}>Ver Repositorio</button>
                                 </Col>
                                 <Col>
                                     <img src={creacion.imagen} alt='' width='100%' />
