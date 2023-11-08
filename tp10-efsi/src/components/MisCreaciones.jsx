@@ -6,20 +6,49 @@ import { CreationContext } from '../context/CreationContext'
 import { useContext, useState } from 'react';
 import { Icon } from '@iconify/react';
 import { useEffect } from 'react';
-import { getData, setFavoritos } from '../Consultas';
+import { getData, setFavoritos, deleteFavoritos } from '../Consultas';
+import { useSearchParams } from 'react-router-dom';
 
 const MisCreaciones = () => {
     const { creaciones } = useContext(CreationContext)
-    const [listaFavoritos, setListaFavoritos] = useState(null)
+    const [listaFavoritos, setListaFavoritos] = useState([])
+    const [llegaronLosValores, setLlegaronLosValores] = useState(false)
 
     console.log(creaciones)
 
-    const [favorito, setFavorito] = useState(false)
+    const [favorito, setFavorito] = useState([{id: 0, favorito: false}])
+    /* 
+        Estructura:
+        [
+            {
+                id: 1
+                favorito: false
+            }
+        ]
+    */
 
     const agregarAFavoritos = (id) => {
-        const creacion = creaciones.findIndex((creacion) => creacion.id === id)
-        setFavoritos(creacion)
-        setFavorito(favorito ? false : true)
+        const elId = parseInt(id)
+        const creacion = creaciones.findIndex((item) => item.id === elId)
+        if(creacion !== -1){
+            var listaBool = favorito
+            if(favorito[creacion].favorito){
+                //setFavorito(favorito[id] ? false : true)
+                setListaFavoritos(listaFavoritos.filter((item) => item.id !== elId))
+                listaBool[creacion].favorito = false
+                setFavorito(listaBool)
+                deleteFavoritos(creaciones[creacion])
+            }
+            else{
+                setListaFavoritos([...listaFavoritos ,creaciones[creacion]])
+                listaBool[elId-1].favorito = true
+                setFavorito(listaBool)
+                setFavoritos(creaciones[creacion])
+            }
+        }
+        else{
+            console.error("No se encontró la creación, ID: " + id)
+        }
     }
     
     const traerListaFavoritos = async () => {
@@ -30,26 +59,39 @@ const MisCreaciones = () => {
     useEffect(() => {
         traerListaFavoritos()
         console.log(listaFavoritos)
+        var listaBool = []
+        creaciones.map((creacion) => {
+            listaBool = [...listaBool, {
+                id: creacion.id,
+                favorito: false
+            }]
+        })
+        setFavorito(listaBool)
+        console.log("ListaBooleanos: " + favorito)
+        if(listaBool != []){
+            setLlegaronLosValores(true)
+        }
     },[])
 
     return (
         <>
             <Container style={{ backgroundColor: 'beige', paddingLeft: '4rem', paddingRight: '4rem' }}>
                 {creaciones != null &&
-                    creaciones.map((creacion) =>
+                    creaciones.map((creacion, index) =>
                         <>
                             <Row style={{ display: 'flex', marginTop: '7rem' }}>
                                 <Col style={{ display: 'flex', color: 'black', flexDirection: 'column', textAlign: 'initial', alignItems: 'flex-start', maxWidth: '65%', marginRight: '2rem' }}>
-                                    <div style={{ display: 'flex', alignContent: 'space-around', alignItems: 'baseline' }}>
+                                    <div id={parseInt(creacion.id)} style={{ display: 'flex', alignContent: 'space-around', alignItems: 'baseline' }}>
                                         <h1 style={{ marginBottom: '5%', marginRight: '0.5rem' }}>{creacion.nombre}</h1>
-                                        <button id={creacion.id} onClick={(e) => agregarAFavoritos(e.target.id)} style={{ paddingBottom: '0.3rem', backgroundColor: 'transparent', borderColor: 'transparent' }}> {/*NO SE GUARDA EL ID, VER ESTO*/}
+                                        <button id={creacion.id} key={creacion.id} onClick={(e) => agregarAFavoritos(e.currentTarget.id)} style={{ paddingBottom: '0.3rem', backgroundColor: 'transparent', borderColor: 'transparent' }}> {/*NO SE GUARDA EL ID, VER ESTO*/}
                                             {
-                                                !favorito ? <Icon icon="icon-park-outline:like" style={{paddingBottom: '0.4rem'}}></Icon> : <Icon icon="icon-park-solid:like" style={{ color: "#c41b1b", paddingBottom: '0.4rem' }}></Icon>
+                                                llegaronLosValores &&
+                                                !favorito[index].favorito ? <Icon icon="icon-park-outline:like" style={{paddingBottom: '0.4rem'}}></Icon> : <Icon icon="icon-park-solid:like" style={{ color: "#c41b1b", paddingBottom: '0.4rem' }}></Icon>
                                             }
                                         </button>
                                     </div>
                                     <p style={{ fontSize: '1.3rem' }}>{creacion.descripcion}</p>
-                                    <button href= {creacion.repositorio} target="_blank" rel="noopener noreferrer" style={{ fontWeight: 'bold', letterSpacing: '1px', position: 'relative', background: 'beige', padding: '14px 24px', borderRadius: '22px', border: '4', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black', textDecoration: 'none' }}>Ver Repositorio</button>
+                                    <button rel="noopener noreferrer" style={{ fontWeight: 'bold', letterSpacing: '1px', position: 'relative', background: 'beige', padding: '14px 24px', borderRadius: '22px', border: '4', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black', textDecoration: 'none' }}><a href= {creacion.repositorio} target="_blank" style={{textDecoration: 'none', color: 'black'}}>Ver Repositorio</a></button>
                                 </Col>
                                 <Col>
                                     <img src={creacion.imagen} alt='' width='100%' />
