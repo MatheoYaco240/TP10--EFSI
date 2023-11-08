@@ -3,7 +3,12 @@ import '../css/Styles.css'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Proyecto1 from '../img/Proyecto1.jpg'
+import Proyecto1 from '../img/Proyecto1.jpg';
+import snifterlylogo2 from '../img/snifterlylogo2.png'
+import Logo from '../img/Logo.png'
+import Reciclaje from '../img/Reciclaje.PNG'
+import check from '../img/check.png'
+import thesandbox2 from '../img/thesandbox2.PNG'
 import { Icon } from '@iconify/react';
 import { useState } from 'react';
 
@@ -27,16 +32,16 @@ const Home = () => {
                     <h1 style={{ color: 'black', marginBottom: '2%' }}>Mi Portfolio</h1>
 
                     <div style={{ display: 'flex', fontSize: "1.45rem", color: 'black', minWidth: '60%', justifyContent: 'space-between', marginBottom: '2%' }}>
-                        <a href="/info-personal" style={{ padding: '3%' }}>
+                        <a href="/info-personal" style={{ padding: '3%', textDecoration: 'none', fontWeight: 'bold', color: '#1c3d78'}}>
                             Información
                         </a>
-                        <a href="/mis-creaciones" style={{ padding: '3%' }}>
+                        <a href="/mis-creaciones" style={{ padding: '3%', textDecoration: 'none', fontWeight: 'bold', color: '#1c3d78'}}>
                             Mis Creaciones
                         </a>
-                        <a href="/favoritos" style={{ padding: '3%' }}>
+                        <a href="/favoritos" style={{ padding: '3%', textDecoration: 'none', fontWeight: 'bold', color: '#1c3d78'}}>
                             Favoritos
                         </a>
-                        <a href="/perfil" style={{ padding: '3%' }}>
+                        <a href="/perfil" style={{ padding: '3%', textDecoration: 'none', fontWeight: 'bold', color: '#1c3d78'}}>
                             Perfil
                         </a>
                     </div>
@@ -48,72 +53,72 @@ const Home = () => {
                         <Row style={{ display: 'flex', marginTop: '7rem'}}>
                         <Col style={{ display: 'flex', color: 'black', flexDirection: 'column', textAlign: 'initial', alignItems: 'flex-start', maxWidth: '65%', marginRight: '4rem' }}>
                                 <div style={{display: 'flex',alignContent: 'space-around',alignItems: 'baseline'}}>
-                                    <h1 style={{ marginBottom: '5%', marginRight: '0.5rem' }}>Proyecto 1</h1>
+                                    <h1 style={{ marginBottom: '5%', marginRight: '0.5rem' }}>Snifterly</h1>
                                     <button onClick={() => agregarAFavoritos()} style={{paddingBottom: '0.15rem', backgroundColor: 'transparent', borderColor: 'transparent'}}>
                                         {
                                             !favorito ? <Icon icon="icon-park-outline:like"></Icon> : <Icon icon="icon-park-solid:like" style={{color: "#c41b1b"}}></Icon>
                                         }
                                     </button>
                                 </div>
-                                <p style={{ fontSize: '1.3rem'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie lacus malesuada est commodo, at aliquet leo sodales. Donec ac neque at arcu suscipit ullamcorper. Phasellus venenatis dui vel eros faucibus, vel porttitor eros finibus. Sed bibendum, justo quis sagittis vulputate, augue lorem bibendum dolor, nec congue enim lacus ut quam. </p>
-                                <button style={{ fontWeight: 'bold', letterSpacing: '1px', color: '#ddd', position: 'relative', background: 'transparent', padding: '14px 24px', borderRadius: '22px', border: '2', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black' }}>Ver Repositorio</button>
+                                <p style={{ fontSize: '1.3rem'}}>Snifterly es una aplicación mobile con el objetivo de promover el consumo responsable de alcohol. La aplicación trabaja con un sistema organizado por jornadas (un período de tiempo en el cual el usuario va a estar ingiriendo bebidas) donde se podrá medir la cantidad de alcohol que uno tiene en su organismo, utilizando un dispositivo alcoholímetro con bluetooth integrado. La app registrará la medición, la duración de la jornada, y el recorrido de su consumo, permitiendo al usuario observar sus hábitos comprensiblemente.</p>
+                                <button rel="noopener noreferrer" style={{ fontWeight: 'bold', letterSpacing: '1px', position: 'relative', background: 'beige', padding: '14px 24px', borderRadius: '22px', border: '4', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black', textDecoration: 'none' }}><a href= {'https://github.com/sofygb/Snifterly.git'} target="_blank" style={{textDecoration: 'none', color: 'black'}}>Ver Repositorio</a></button>
                             </Col>
                             <Col>
-                                <img src={Proyecto1} alt='' width='100%' />
+                                <img src={snifterlylogo2} alt='' width='100%' style={{ borderRadius:'2.2rem'}}/>
                             </Col>
                         </Row>
 
                         <Row style={{ display: 'flex', marginTop: '9rem' , marginBottom: '1.5rem'}}>
                         <Col style={{ display: 'flex', color: 'black', flexDirection: 'column', textAlign: 'initial', alignItems: 'flex-start', maxWidth: '65%', marginRight: '4rem' }}>
                                 <div style={{display: 'flex',alignContent: 'space-around',alignItems: 'baseline'}}>
-                                    <h1 style={{ marginBottom: '5%', marginRight: '0.5rem' }}>Proyecto 1</h1>
+                                    <h1 style={{ marginBottom: '5%', marginRight: '0.5rem' }}>Reciclaje</h1>
                                     <button onClick={() => agregarAFavoritos()} style={{paddingBottom: '0.15rem', backgroundColor: 'transparent', borderColor: 'transparent'}}>
                                         {
                                             !favorito ? <Icon icon="icon-park-outline:like"></Icon> : <Icon icon="icon-park-solid:like" style={{color: "#c41b1b"}}></Icon>
                                         }
                                     </button>
                                 </div>
-                                <p style={{ fontSize: '1.3rem'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie lacus malesuada est commodo, at aliquet leo sodales. Donec ac neque at arcu suscipit ullamcorper. Phasellus venenatis dui vel eros faucibus, vel porttitor eros finibus. Sed bibendum, justo quis sagittis vulputate, augue lorem bibendum dolor, nec congue enim lacus ut quam. </p>
-                                <button style={{ fontWeight: 'bold', letterSpacing: '1px', color: '#ddd', position: 'relative', background: 'transparent', padding: '14px 24px', borderRadius: '22px', border: '2', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black' }}>Ver Repositorio</button>
+                                <p style={{ fontSize: '1.3rem'}}>Para promover las prácticas de reciclaje surge ... un sitio en el cual busca concientizar y educar para contribuir en el cuidado del medio ambiente. </p>
+                                <button rel="noopener noreferrer" style={{ fontWeight: 'bold', letterSpacing: '1px', position: 'relative', background: 'beige', padding: '14px 24px', borderRadius: '22px', border: '4', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black', textDecoration: 'none' }}><a href= {'https://github.com/MatheoYaco240/TP09--EFSI.git'} target="_blank" style={{textDecoration: 'none', color: 'black'}}>Ver Repositorio</a></button>
                             </Col>
-                            <Col>
-                                <img src={Proyecto1} alt='' width='100%' />
+                            <Col style={{marginLeft: '7rem', marginTop: '2rem'}}>
+                                <img src={Reciclaje} alt='' width='50%' />
                             </Col>
                         </Row>
 
                         <Row style={{ display: 'flex',  marginTop: '9rem' }}>
                         <Col style={{ display: 'flex', color: 'black', flexDirection: 'column', textAlign: 'initial', alignItems: 'flex-start', maxWidth: '65%', marginRight: '4rem' }}>
                                 <div style={{display: 'flex',alignContent: 'space-around',alignItems: 'baseline'}}>
-                                    <h1 style={{ marginBottom: '5%', marginRight: '0.5rem' }}>Proyecto 1</h1>
+                                    <h1 style={{ marginBottom: '5%', marginRight: '0.5rem' }}>The Sandbox</h1>
                                     <button onClick={() => agregarAFavoritos()} style={{paddingBottom: '0.15rem', backgroundColor: 'transparent', borderColor: 'transparent'}}>
                                         {
                                             !favorito ? <Icon icon="icon-park-outline:like"></Icon> : <Icon icon="icon-park-solid:like" style={{color: "#c41b1b"}}></Icon>
                                         }
                                     </button>
                                 </div>
-                                <p style={{ fontSize: '1.3rem'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie lacus malesuada est commodo, at aliquet leo sodales. Donec ac neque at arcu suscipit ullamcorper. Phasellus venenatis dui vel eros faucibus, vel porttitor eros finibus. Sed bibendum, justo quis sagittis vulputate, augue lorem bibendum dolor, nec congue enim lacus ut quam. </p>
-                                <button style={{ fontWeight: 'bold', letterSpacing: '1px', color: '#ddd', position: 'relative', background: 'transparent', padding: '14px 24px', borderRadius: '22px', border: '2', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black' }}>Ver Repositorio</button>
+                                <p style={{ fontSize: '1.3rem'}}>The SandBox es un prototipo hecho en Figma, basado en las estrevistas hechas a un cliente relacionadas con el Metaverso.</p>
+                                <button rel="noopener noreferrer" style={{ fontWeight: 'bold', letterSpacing: '1px', position: 'relative', background: 'beige', padding: '14px 24px', borderRadius: '22px', border: '4', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black', textDecoration: 'none' }}><a href= {'https://www.figma.com/proto/K7keqvuTEqWNtKLHJt5YeN/EFSI---Prototipado-alta?node-id=107-69&starting-point-node-id=107%3A69'} target="_blank" style={{textDecoration: 'none', color: 'black'}}>Ver Proyecto</a></button>
                             </Col>
-                            <Col>
-                                <img src={Proyecto1} alt='' width='100%' />
+                            <Col  style={{marginTop: '3rem' }}>
+                                <img src={thesandbox2} alt='' width='100%' />
                             </Col>
                         </Row>
 
                         <Row style={{ display: 'flex',  marginTop: '9rem' }}>
                         <Col style={{ display: 'flex', color: 'black', flexDirection: 'column', textAlign: 'initial', alignItems: 'flex-start', maxWidth: '65%', marginRight: '4rem' }}>
                                 <div style={{display: 'flex',alignContent: 'space-around',alignItems: 'baseline'}}>
-                                    <h1 style={{ marginBottom: '5%', marginRight: '0.5rem' }}>Proyecto 1</h1>
+                                    <h1 style={{ marginBottom: '5%', marginRight: '0.5rem' }}>Librería</h1>
                                     <button onClick={() => agregarAFavoritos()} style={{paddingBottom: '0.15rem', backgroundColor: 'transparent', borderColor: 'transparent'}}>
                                         {
                                             !favorito ? <Icon icon="icon-park-outline:like"></Icon> : <Icon icon="icon-park-solid:like" style={{color: "#c41b1b"}}></Icon>
                                         }
                                     </button>
                                 </div>
-                                <p style={{ fontSize: '1.3rem'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie lacus malesuada est commodo, at aliquet leo sodales. Donec ac neque at arcu suscipit ullamcorper. Phasellus venenatis dui vel eros faucibus, vel porttitor eros finibus. Sed bibendum, justo quis sagittis vulputate, augue lorem bibendum dolor, nec congue enim lacus ut quam. </p>
-                                <button style={{ fontWeight: 'bold', letterSpacing: '1px', color: '#ddd', position: 'relative', background: 'transparent', padding: '14px 24px', borderRadius: '22px', border: '2', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black' }}>Ver Repositorio</button>
+                                <p style={{ fontSize: '1.3rem'}}>El usuario podrá crear Libros en los cuales podrá personalizar la portada, personajes, agregar descripción y dejar reseñas. </p>
+                                <button rel="noopener noreferrer" style={{ fontWeight: 'bold', letterSpacing: '1px', position: 'relative', background: 'beige', padding: '14px 24px', borderRadius: '22px', border: '4', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black', textDecoration: 'none' }}><a href= {'https://github.com/sofygb/TP09.git'} target="_blank" style={{textDecoration: 'none', color: 'black'}}>Ver Repositorio</a></button>
                             </Col>
                             <Col>
-                                <img src={Proyecto1} alt='' width='100%' />
+                                <img src={Logo} alt='' width='60%' />
                             </Col>
                         </Row>
 
@@ -128,7 +133,7 @@ const Home = () => {
                                     </button>
                                 </div>
                                 <p style={{ fontSize: '1.3rem'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie lacus malesuada est commodo, at aliquet leo sodales. Donec ac neque at arcu suscipit ullamcorper. Phasellus venenatis dui vel eros faucibus, vel porttitor eros finibus. Sed bibendum, justo quis sagittis vulputate, augue lorem bibendum dolor, nec congue enim lacus ut quam. </p>
-                                <button style={{ fontWeight: 'bold', letterSpacing: '1px', color: '#ddd', position: 'relative', background: 'transparent', padding: '14px 24px', borderRadius: '22px', border: '2', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black' }}>Ver Repositorio</button>
+                                <button rel="noopener noreferrer" style={{ fontWeight: 'bold', letterSpacing: '1px', position: 'relative', background: 'beige', padding: '14px 24px', borderRadius: '22px', border: '4', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black', textDecoration: 'none' }}><a href= {''} target="_blank" style={{textDecoration: 'none', color: 'black'}}>Ver Repositorio</a></button>
                             </Col>
                             <Col>
                                 <img src={Proyecto1} alt='' width='100%' />
@@ -138,22 +143,40 @@ const Home = () => {
                         <Row style={{ display: 'flex', marginTop: '9rem' }}>
                         <Col style={{ display: 'flex', color: 'black', flexDirection: 'column', textAlign: 'initial', alignItems: 'flex-start', maxWidth: '65%', marginRight: '4rem' }}>
                                 <div style={{display: 'flex',alignContent: 'space-around',alignItems: 'baseline'}}>
-                                    <h1 style={{ marginBottom: '5%', marginRight: '0.5rem' }}>Proyecto 1</h1>
+                                    <h1 style={{ marginBottom: '5%', marginRight: '0.5rem' }}>CheckList</h1>
                                     <button onClick={() => agregarAFavoritos()} style={{paddingBottom: '0.15rem', backgroundColor: 'transparent', borderColor: 'transparent'}}>
                                         {
                                             !favorito ? <Icon icon="icon-park-outline:like"></Icon> : <Icon icon="icon-park-solid:like" style={{color: "#c41b1b"}}></Icon>
                                         }
                                     </button>
                                 </div>
-                                <p style={{ fontSize: '1.3rem'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie lacus malesuada est commodo, at aliquet leo sodales. Donec ac neque at arcu suscipit ullamcorper. Phasellus venenatis dui vel eros faucibus, vel porttitor eros finibus. Sed bibendum, justo quis sagittis vulputate, augue lorem bibendum dolor, nec congue enim lacus ut quam. </p>
-                                <button style={{ fontWeight: 'bold', letterSpacing: '1px', color: '#ddd', position: 'relative', background: 'transparent', padding: '14px 24px', borderRadius: '22px', border: '2', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black' }}>Ver Repositorio</button>
+                                <p style={{ fontSize: '1.3rem'}}>Check es una app móvil que permite registrar tareas/tasks y marcar si están completadas.</p>
+                                <button rel="noopener noreferrer" style={{ fontWeight: 'bold', letterSpacing: '1px', position: 'relative', background: 'beige', padding: '14px 24px', borderRadius: '22px', border: '4', borderColor: '#1c3d78', borderWidth: '2px', fontSize: '1rem', color: 'black', textDecoration: 'none' }}><a href= {'https://github.com/sofygb/TP06---DAI.git'} target="_blank" style={{textDecoration: 'none', color: 'black'}}>Ver Repositorio</a></button>
                             </Col>
-                            <Col style={{ marginBottom: '7rem'}}>
-                                <img src={Proyecto1} alt='' width='100%' />
+                            <Col style={{ marginBottom: '20rem'}}>
+                                <img src={check} alt='' width='30%' />
                             </Col>
                         </Row>
                     </Container>
-                <footer style={{ display: 'flex', padding: '2%', backgroundColor: '#1c3d78' }}>
+                <footer style={{ display: 'flex', padding: '2%', backgroundColor: '#1c3d78', color: 'white' }}>
+                    <h3>Contacto:</h3>
+                    <div style={{marginTop: '2rem' }}>
+                        <Row style={{ display: 'flex', marginTop: '1.5rem' }}>
+                            <Col style={{ display: 'flex', color: 'white', flexDirection: 'column', textAlign: 'initial', alignItems: 'flex-start', marginRight: '4rem' }}>
+                                <div>
+                                    <p>GitHub</p>
+                                    <p>Instagram</p>
+                                </div>     
+                            </Col>
+
+                            <Col style={{ display: 'flex', color: 'white', flexDirection: 'column', textAlign: 'initial', alignItems: 'flex-start', marginRight: '4rem' }}>
+                                <div>
+                                    <p>GitHub</p>
+                                    <p>Instagram</p>
+                                </div>  
+                            </Col>
+                        </Row>
+                    </div>
                 </footer>
             </div>
         </>

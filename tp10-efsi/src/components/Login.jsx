@@ -76,9 +76,9 @@ const Login = () => {
                     }}
                 >
 
-<h1 style={{ fontWeight: 'bold', fontSize: '3rem', marginBottom: '5%' }}>Inicio de Sesión</h1>
+<h1 style={{ fontWeight: 'bold', fontSize: '3rem', marginBottom: '5%', color: 'black' }}>Inicio de Sesión</h1>
 
-<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', marginBottom: '2%', textAlign: 'left' }}>
+<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', marginBottom: '2%', textAlign: 'left', color: 'black', fontSize: '1.5rem'}}>
     <label htmlFor="email">Email:</label>
     <input id="email" type="text" placeholder="admin" style={{marginBottom: '5%'}} value={email} onChange={(e) => setEmail(e.target.value)}/>
 
@@ -89,7 +89,7 @@ const Login = () => {
     </div>
 </div>
 
-<a style={{ fontSize: '1rem', backgroundColor: '#1b33d1b8', padding: '1rem', color: 'white', textDecoration: 'none', borderRadius: '15%'}} onClick={() => validacion()} href={href} className='btn text-light'>Iniciar Sesión</a>
+<a style={{ fontSize: '1rem', backgroundColor: 'rgb(28, 61, 120)', padding: '1rem', color: 'white', textDecoration: 'none', borderRadius: '15%'}} onClick={() => validacion()} href={href} className='btn text-light'>Iniciar Sesión</a>
 
                 </div>
                 <footer style={{ display: 'flex', padding: '2%', backgroundColor: '#1c3d78' }}>
