@@ -59,19 +59,29 @@ const MisCreaciones = () => {
     useEffect(() => {
         traerListaFavoritos()
         console.log(listaFavoritos)
+    },[])
+    
+    useEffect(() => {
         var listaBool = []
-        creaciones.map((creacion) => {
+        if(!llegaronLosValores){
+
+            creaciones.map((creacion) => {
+                listaFavoritos.findIndex((item) => item.idCreacion === creacion.id) !== -1 ?
+                listaBool = [...listaBool, {
+                id: creacion.id,
+                favorito: true
+            }]
+            :
             listaBool = [...listaBool, {
                 id: creacion.id,
                 favorito: false
             }]
         })
         setFavorito(listaBool)
-        console.log("ListaBooleanos: " + favorito)
-        if(listaBool != []){
-            setLlegaronLosValores(true)
+        setLlegaronLosValores(true)
         }
-    },[])
+        console.log("ListaBooleanos: " + favorito)
+    }, [listaFavoritos])
 
     return (
         <>

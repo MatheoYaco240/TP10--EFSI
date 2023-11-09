@@ -32,7 +32,7 @@ export const setFavoritos = async (creacion) => {
     return await res.json()
 }
 
-export const deleteFavoritos = async (creacion) => {
+export const deleteFavoritos = async (creacion) => { //Recibe la creacion de la lista de todas las creaciones, no tiene idCreacion
     const data = await getData()
     const index = data.findIndex((item) => item.idCreacion === creacion.id)
     const res = await fetch(API + `/${data[index].id}`, {

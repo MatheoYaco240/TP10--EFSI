@@ -1,3 +1,12 @@
 {
-  "favoritos": []
+  "favoritos": [
+    {
+      "idCreacion": 3,
+      "nombre": "Reciclaje Plus",
+      "descripcion": "Para promover las prácticas de reciclaje surge Reciclaje Plus, un sitio web el cual busca concientizar y educar para contribuir en el cuidado del medio ambiente. El sitio brinda información sobre los tachos que existen en la actualidad y también uno puede ingresar un producto y el sitio te dirá en qué tacho/s se pueden tirar y por qué.",
+      "imagen": "/static/media/Reciclaje.dbbadd368f5f515d3851.PNG",
+      "respositorio": "https://github.com/MatheoYaco240/TP09--EFSI.git",
+      "id": 1
+    }
+  ]
 }

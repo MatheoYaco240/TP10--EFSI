@@ -171,8 +171,8 @@ const Home = () => {
 
                             <Col style={{ display: 'flex', color: 'white', flexDirection: 'column', textAlign: 'initial', alignItems: 'flex-start', marginRight: '4rem' }}>
                                 <div>
-                                    <p>GitHub</p>
-                                    <p>Instagram</p>
+                                    <p>LinkedIn</p>
+                                    <p>CV</p>
                                 </div>  
                             </Col>
                         </Row>
