@@ -16,7 +16,7 @@ const Favoritos = () => {
         const data = await getData()
         setListaFavoritos(data)
     }
-
+    
     const agregarAFavoritos = (id) => { //Recibe el idCreacion
         const elId = parseInt(id)
         const creacion = creaciones.findIndex((item) => item.id === elId) //ID de la creacion en la lista de todas las creaciones

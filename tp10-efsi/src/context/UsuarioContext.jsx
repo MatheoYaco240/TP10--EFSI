@@ -1,27 +1,31 @@
 import React from "react";
+import { useState } from "react";
 import { useEffect } from "react";
+import { getData } from "../Consultas";
+
 
 export const UsuarioContext = React.createContext();
 
+
 const UsuarioProvider = (props) => {
+    const [listaFavoritos, setListaFavoritos] = useState(null)
     const [usuarios, setUsuarios] = React.useState([
         {
-            email: 'myacovino1@gmail.com',
-            contrasenia: 'Matheo',
-            activo: false
-        },
-        {
-            email: 'hola@gmail.com',
-            contrasenia: 'hola',
-            activo: false
-        },
-        {
+            nombre: 'admin',
             email: 'admin',
             contrasenia: 'admin',
             activo: false
         }
     ]);
 
+    useEffect(() => {
+
+    },[])
+    
+    const traerListaFavoritos = async () => {
+        const data = await getData()
+        setListaFavoritos(data)
+    }
 
     return <UsuarioContext.Provider value={{ usuarios, setUsuarios }}>{props.children}</UsuarioContext.Provider>
 }

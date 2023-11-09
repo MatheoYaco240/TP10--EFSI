@@ -1,12 +1,29 @@
 {
   "favoritos": [
     {
-      "idCreacion": 3,
-      "nombre": "Reciclaje Plus",
-      "descripcion": "Para promover las prácticas de reciclaje surge Reciclaje Plus, un sitio web el cual busca concientizar y educar para contribuir en el cuidado del medio ambiente. El sitio brinda información sobre los tachos que existen en la actualidad y también uno puede ingresar un producto y el sitio te dirá en qué tacho/s se pueden tirar y por qué.",
-      "imagen": "/static/media/Reciclaje.dbbadd368f5f515d3851.PNG",
-      "respositorio": "https://github.com/MatheoYaco240/TP09--EFSI.git",
+      "idCreacion": 1,
+      "nombre": "Snifterly",
+      "descripcion": "Snifterly es una aplicación mobile con el objetivo de promover el consumo responsable de alcohol. La aplicación trabaja con un sistema organizado por jornadas (un período de tiempo en el cual el usuario va a estar ingiriendo bebidas) donde se podrá medir la cantidad de alcohol que uno tiene en su organismo, utilizando un dispositivo alcoholímetro con bluetooth integrado. La app registrará la medición, la duración de la jornada, y el recorrido de su consumo, permitiendo al usuario observar sus hábitos comprensiblemente.",
+      "imagen": "/static/media/snifterly.47eba87eafba082e0f44.PNG",
+      "respositorio": "https://github.com/sofygb/Snifterly",
       "id": 1
+    },
+    {
+      "idCreacion": 2,
+      "nombre": "The SandBox",
+      "descripcion": "The SandBox es un prototipo hecho en Figma, basado en las estrevistas hechas a un cliente relacionadas con el Metaverso.",
+      "imagen": "/static/media/the-sandbox.dc9fd42eab7234d5735c.PNG",
+      "respositorio": "https://www.figma.com/proto/K7keqvuTEqWNtKLHJt5YeN/EFSI---Prototipado-alta?node-id=107-69&starting-point-node-id=107%3A69",
+      "id": 2
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "admin",
+      "email": "admin",
+      "contrasenia": "admin",
+      "activo": false
     }
   ]
 }
