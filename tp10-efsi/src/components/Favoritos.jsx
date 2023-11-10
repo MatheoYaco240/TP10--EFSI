@@ -19,7 +19,7 @@ const Favoritos = () => {
     
     const agregarAFavoritos = (id) => { //Recibe el idCreacion
         const elId = parseInt(id)
-        const creacion = creaciones.findIndex((item) => item.id === elId) //ID de la creacion en la lista de todas las creaciones
+        const creacion = creaciones.findIndex((item) => item.idCreacion === elId) //ID de la creacion en la lista de todas las creaciones
         const idPosicion = listaFavoritos.findIndex((item) => item.idCreacion === elId) //Posición de la creacion en el array de favoritos
         if(creacion !== -1){
             var listaBool = favorito
@@ -66,6 +66,7 @@ const Favoritos = () => {
 
     return (
         <Container style={{ backgroundColor: 'beige', paddingLeft: '4rem', paddingRight: '4rem' }}>
+            <h1 style={{ color: 'black', marginBottom: '10%', fontSize: '3rem' }}>Lista de Favoritos</h1>
             {listaFavoritos != null &&
                 listaFavoritos.map((creacion, index) =>
                     <>
@@ -89,6 +90,10 @@ const Favoritos = () => {
                         </Row><br></br><br></br><br></br>
                     </>
                 )
+            }
+            {
+                listaFavoritos != null && listaFavoritos.length === 0 &&
+                <i style={{color: 'black'}}>¡Agrega mis creaciones a tu lista de favoritos!</i>
             }
         </Container>
     )

@@ -7,6 +7,7 @@ import Stack from '@mui/material/Stack';
 import { createSvgIcon } from '@mui/material/utils';
 import { getData } from "../Consultas";
 import { useState } from "react";
+import Footer from "./Footer";
 
 const Layout = () => {
     const infoUsuario = window.localStorage
@@ -142,9 +143,7 @@ const Layout = () => {
                     <Outlet />
 
                 </header>
-                <footer style={{display: 'flex', padding:'2%', backgroundColor: '#1c3d78'}}>
-
-                </footer>
+                <Footer />
             </div>
         </>
     )

@@ -32,11 +32,11 @@ export const getUsuarioByMailContrasenia = async (email, contrasenia) => {
     return await res.json()
 }
 
-export const setUsuarioActual = async (email, contrasenia) => { //TESTEAR
-    var usuario = await getUsuarioByMailContrasenia(email, contrasenia)
+export const setUsuarioActual = async (email,contrasenia) => { //TESTEAR
+    var [usuario] = await getUsuarioByMailContrasenia(email, contrasenia)
 
-    const res = await fetch(API2 + '/', {
-        method: "POST",
+    const res = await fetch(API2 + `/${usuario.id}`, {
+        method: "PUT",
         headers: {
             'Content-Type': 'application/json',
          },
@@ -45,7 +45,7 @@ export const setUsuarioActual = async (email, contrasenia) => { //TESTEAR
             'nombre': usuario.nombre,
             'email': usuario.email,
             'contrasenia': usuario.contrasenia,
-            'activo': true,
+            'activo': usuario.activo ? false : true,
         })
     })
     console.log(res) 
@@ -59,7 +59,7 @@ export const setFavoritos = async (creacion) => {
             'Content-Type': 'application/json',
          },
         body: JSON.stringify({
-            'idCreacion': creacion.id,
+            'idCreacion': creacion.idCreacion,
             'nombre': creacion.nombre,
             'descripcion': creacion.descripcion,
             'imagen': creacion.imagen,
@@ -72,7 +72,7 @@ export const setFavoritos = async (creacion) => {
 
 export const deleteFavoritos = async (creacion) => { //Recibe la creacion de la lista de todas las creaciones, no tiene idCreacion
     const data = await getData()
-    const index = data.findIndex((item) => item.idCreacion === creacion.id)
+    const index = data.findIndex((item) => item.idCreacion === creacion.idCreacion)
     const res = await fetch(API + `/${data[index].id}`, {
         method: "DELETE",
     })

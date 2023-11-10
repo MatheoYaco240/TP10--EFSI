@@ -1,26 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Styles.css'
+import { getUsuarios, getUsuarioByMailContrasenia, setUsuarioActual } from '../Consultas';
+import { Route, redirect } from 'react-router-dom';
 
 const Login = () => {
-    localStorage.setItem('usuarios', JSON.stringify({idActivo:-1, usuarios: [{idUsuario: 0, email: 'admin', contrasenia: 'admin', nombre: 'admin', favoritos: []}]}))
     
     React.useEffect(()=>{
-        if(JSON.parse(localStorage.getItem("usuarios") || []).usuarios.findIndex((usuario) => usuario.email === 'admin' && usuario.contrasenia === 'admin') === -1){
-        }
+        traerUsuarios()
     },[])
-
-    const usuarios = JSON.parse(localStorage.getItem("usuarios"))
-
-    useEffect(() => {
-        console.log(usuarios)
-    }, [usuarios])
-
+    
     const [email, setEmail] = React.useState("admin")
     const [password, setPassword] = React.useState("admin")
-
+    
     const [typeInput, setTypeInput] = React.useState("password")
 
+    const [usuarios, setUsuarios] = React.useState(null)
+    
     const [href, setHref] = React.useState("#")
+
+    const [seguir, setSeguir] = React.useState(false)
+    
+    const traerUsuarios = async () => {
+        const data = await getUsuarios()
+        setUsuarios(data)
+        console.log(data)
+    }
 
     const mostrarPassword = () => {
         const togglePassword = document.querySelector("#togglePassword");
@@ -39,29 +43,15 @@ const Login = () => {
     }
 
     const validacion = () => {
-        const posicion = usuarios.usuarios.findIndex((usuario) => usuario.email === email && usuario.contrasenia === password)
-        if(posicion !== -1 && password !== "" && email !== ""){
-            const { historial = [], idActivo = -1 } = JSON.parse(localStorage.getItem("Historial")) || {};
-            const newData = {
-                historial: historial,
-                idActivo: posicion
-            }
-            localStorage.setItem("Historial", JSON.stringify(newData));
-            setHref("/home")
+        const posicion = usuarios.findIndex((usuario) => usuario.email === email && usuario.contrasenia === password)
+        if(posicion != -1){
+            const data = setUsuarioActual(usuarios[posicion].email, usuarios[posicion].contrasenia) || null
+            data != null && setHref("/home")
         }
         else{
             console.error("Error: Usuario no econtrado")
             setHref("#")
         }
-        /*
-        const valor = true
-        if(valor){
-            setHref('/home')
-        }
-        else{
-            setHref('#')
-            console.error('Usuario no encontrado')
-        }*/
     }
 
     return (
